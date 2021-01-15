@@ -25,6 +25,7 @@ import {
   AppCustomizeScope,
   AppCustomizeForResponse,
   AppCustomizeForParameter,
+  AppNotificationsReminderResponse,
 } from "./types";
 
 type RowLayoutForParameter = {
@@ -461,6 +462,23 @@ export class AppClient {
       preview: true,
     });
     return this.client.put(path, params);
+  }
+
+  public getAppNotificationsReminder(params: {
+    app: AppID;
+    lang?: Lang;
+    preview?: boolean;
+  }): Promise<{
+    notifications: AppNotificationsReminderResponse;
+    timezone: string;
+    revision: string;
+  }> {
+    const { preview, ...rest } = params;
+    const path = this.buildPathWithGuestSpaceId({
+      endpointName: "app/notifications/reminder",
+      preview,
+    });
+    return this.client.get(path, rest);
   }
 
   private buildPathWithGuestSpaceId(params: {

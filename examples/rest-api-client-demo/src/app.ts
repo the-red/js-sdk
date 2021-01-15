@@ -445,4 +445,14 @@ export class App {
       console.log(error);
     }
   }
+
+  public async getAppNotificationsReminder() {
+    try {
+      console.log(
+        await this.client.app.getAppNotificationsReminder({ app: APP_ID })
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  }
 }
