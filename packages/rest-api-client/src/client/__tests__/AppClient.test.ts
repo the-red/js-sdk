@@ -897,6 +897,8 @@ describe("AppClient", () => {
           notifyToCommenter: true,
         },
       ],
+      notifyToCommenter: true,
+      revision: 1,
     };
     beforeEach(async () => {
       await appClient.updateAppUpdateGeneralNotifications(params);

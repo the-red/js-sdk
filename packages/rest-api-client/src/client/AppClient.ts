@@ -467,6 +467,8 @@ export class AppClient {
   public updateAppUpdateGeneralNotifications(params: {
     app: AppID;
     notifications?: AppUpdateGeneralNotificationsParameter[];
+    notifyToCommenter?: boolean;
+    revision?: Revision;
   }): Promise<{ revision: string }> {
     const path = this.buildPathWithGuestSpaceId({
       endpointName: "app/notifications/general",

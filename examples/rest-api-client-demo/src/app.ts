@@ -480,6 +480,7 @@ export class App {
         await this.client.app.updateAppUpdateGeneralNotifications({
           app: APP_ID,
           notifications,
+          notifyToCommenter: true,
         })
       );
     } catch (error) {
