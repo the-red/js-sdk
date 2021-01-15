@@ -445,4 +445,45 @@ export class App {
       console.log(error);
     }
   }
+
+  public async updateAppGeneralNotifications() {
+    const notifications = [
+      {
+        entity: {
+          code: "Administrator",
+          type: "USER" as const,
+        },
+        includeSubs: true,
+        recordAdded: false,
+        recordEdited: true,
+        commentAdded: false,
+        statusChanged: true,
+        fileImported: false,
+        notifyToCommenter: true,
+      },
+      {
+        entity: {
+          code: "everyone",
+          type: "GROUP" as const,
+        },
+        includeSubs: false,
+        recordAdded: true,
+        recordEdited: false,
+        commentAdded: true,
+        statusChanged: false,
+        fileImported: true,
+        notifyToCommenter: false,
+      },
+    ];
+    try {
+      console.log(
+        await this.client.app.updateAppUpdateGeneralNotifications({
+          app: APP_ID,
+          notifications,
+        })
+      );
+    } catch (error) {
+      console.log(error);
+    }
+  }
 }
