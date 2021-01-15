@@ -900,7 +900,10 @@ describe("AppClient", () => {
     });
     describe("preview: true", () => {
       beforeEach(async () => {
-        await appClient.getAppNotificationsReminder({ ...params, preview: true });
+        await appClient.getAppNotificationsReminder({
+          ...params,
+          preview: true,
+        });
       });
       it("should pass the path to the http client", () => {
         expect(mockClient.getLogs()[0].path).toBe(

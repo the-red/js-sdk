@@ -469,7 +469,7 @@ export class AppClient {
     lang?: Lang;
     preview?: boolean;
   }): Promise<{
-    notifications: AppNotificationsReminderResponse;
+    notifications: AppNotificationsReminderResponse[];
     timezone: string;
     revision: string;
   }> {
