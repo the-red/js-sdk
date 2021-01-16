@@ -446,10 +446,10 @@ export class App {
     }
   }
 
-  public async getAppNotificationsReminder() {
+  public async getReminderNotifications() {
     try {
       console.log(
-        await this.client.app.getAppNotificationsReminder({ app: APP_ID })
+        await this.client.app.getReminderNotifications({ app: APP_ID })
       );
     } catch (error) {
       console.log(error);

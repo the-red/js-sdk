@@ -884,7 +884,7 @@ describe("AppClient", () => {
     const params = { app: APP_ID, lang } as const;
     describe("without preview", () => {
       beforeEach(async () => {
-        await appClient.getAppNotificationsReminder(params);
+        await appClient.getReminderNotifications(params);
       });
       it("should pass the path to the http client", () => {
         expect(mockClient.getLogs()[0].path).toBe(
@@ -900,7 +900,7 @@ describe("AppClient", () => {
     });
     describe("preview: true", () => {
       beforeEach(async () => {
-        await appClient.getAppNotificationsReminder({
+        await appClient.getReminderNotifications({
           ...params,
           preview: true,
         });
