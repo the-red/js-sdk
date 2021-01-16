@@ -1,6 +1,6 @@
 import { Entity } from "../../types/entity";
 
-export type AppUpdateGeneralNotificationsParameter = {
+export type UpdateGeneralNotificationsParameter = {
   entity: Entity;
   includeSubs?: boolean;
   recordAdded?: boolean;

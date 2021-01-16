@@ -446,7 +446,7 @@ export class App {
     }
   }
 
-  public async updateAppGeneralNotifications() {
+  public async updateGeneralNotifications() {
     const notifications = [
       {
         entity: {
@@ -477,7 +477,7 @@ export class App {
     ];
     try {
       console.log(
-        await this.client.app.updateAppUpdateGeneralNotifications({
+        await this.client.app.updateGeneralNotifications({
           app: APP_ID,
           notifications,
           notifyToCommenter: true,
