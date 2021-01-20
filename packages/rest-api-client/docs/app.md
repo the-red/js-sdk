@@ -26,6 +26,7 @@
 - [updateAppSettings](#updateAppSettings)
 - [getProcessManagement](#getProcessManagement)
 - [updateProcessManagement](#updateProcessManagement)
+- [getPerRecordNotifications](#getPerRecordNotifications)
 
 ## Overview
 
@@ -1004,3 +1005,32 @@ Updates the process management settings of an app.
 #### Reference
 
 - https://developer.kintone.io/hc/en-us/articles/115005066028
+
+### getPerRecordNotifications
+
+<!-- TODO -->
+
+#### Parameters
+
+| Name    |       Type       | Required | Description                                                                    |
+| ------- | :--------------: | :------: | ------------------------------------------------------------------------------ |
+| app     | Number or String |   Yes    | The app ID.                                                                    |
+| preview |     Boolean      |          | A flag whether to get the process management settings for pre-live environment |
+
+#### Returns
+
+| Name                                  |  Type   | Description                              |
+| ------------------------------------- | :-----: | ---------------------------------------- |
+| notifications                         |  Array  |                                          |
+| notifications[].filterCond            | String  |                                          |
+| notifications[].title                 | String  |                                          |
+| notifications[].targets               |  Array  |                                          |
+| notifications[].targets[].entity      | Object  |                                          |
+| notifications[].targets[].entity.type | String  |                                          |
+| notifications[].targets[].entity.code | String  |                                          |
+| notifications[].targets[].includeSubs | Boolean |                                          |
+| revision                              | String  | The revision number of the app settings. |
+
+#### Reference
+
+<!-- TODO -->
