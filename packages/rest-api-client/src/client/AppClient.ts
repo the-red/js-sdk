@@ -25,7 +25,7 @@ import {
   AppCustomizeScope,
   AppCustomizeForResponse,
   AppCustomizeForParameter,
-  UpdateGeneralNotificationsParameter,
+  NotificationForParameter,
 } from "./types";
 
 type RowLayoutForParameter = {
@@ -466,7 +466,7 @@ export class AppClient {
 
   public updateGeneralNotifications(params: {
     app: AppID;
-    notifications?: UpdateGeneralNotificationsParameter[];
+    notifications?: NotificationForParameter[];
     notifyToCommenter?: boolean;
     revision?: Revision;
   }): Promise<{ revision: string }> {
