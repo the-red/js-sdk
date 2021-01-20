@@ -25,7 +25,7 @@ import {
   AppCustomizeScope,
   AppCustomizeForResponse,
   AppCustomizeForParameter,
-  ReminderNotificationsResponse,
+  NotificationForResponse,
 } from "./types";
 
 type RowLayoutForParameter = {
@@ -469,7 +469,7 @@ export class AppClient {
     lang?: Lang;
     preview?: boolean;
   }): Promise<{
-    notifications: ReminderNotificationsResponse[];
+    notifications: NotificationForResponse[];
     timezone: string;
     revision: string;
   }> {
