@@ -16,7 +16,9 @@
     "from-manifest.js"
   ],
   "scripts": {
-    "build": "run-p js css",
+    "build": "echo 'no build'",
+    "postbuild": "run-p js css",
+    "clean": "echo 'no clean'",
     "lint": "npm run eslint",
     "test": "run-p jest site:test",
     "test:ci": "npm run test",
@@ -25,7 +27,6 @@
     "js": "webpack --mode production",
     "js:dev": "webpack serve --mode development",
     "jest": "jest",
-    "prerelease": "run-p lint test build",
     "site": "run-p js css",
     "site:dev": "run-p css js:dev",
     "site:test": "jest --config site/jest.config.js"
